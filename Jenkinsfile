@@ -1,10 +1,19 @@
 pipeline {
-	agent any
-	stages {
-		stage('Build') {
-			steps{
-				sh 'echo "Build completed."'
-			}
-		}
-	}
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Webhook працює'
+            }
+        }
+
+        stage('Git Info') {
+            steps {
+                sh 'pwd'
+                sh 'ls -la'
+                sh 'git branch'
+            }
+        }
+    }
 }
